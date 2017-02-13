@@ -20,7 +20,6 @@ def swapchars(string):
   m = string.index(most)
   l = string.index(least)
 
-  #swap
   return swap(string, m, l)
 
 
@@ -42,26 +41,34 @@ def sortcat(n, *args):
     return "".join(arglist)
 
 
-
-
 ### Blue's Clues
-
-
 def bluesclues(istate):
-  statefile = open("state.txt", "r")
+  statefile = open("states.txt", "r")
   abbrev = {}
   for line in statefile:
     k, v = line.strip().split(',')
     abbrev[v.strip()] = k.strip()
-
+  return abbrev[istate]
   statefile.close()
 
 
-# # Blues Booze
+### Blues Booze
+def bluesbooze(name):
+  statefile = open("states.txt", "r")
+  abbrev = {}
+  for line in statefile:
+    k, v = line.strip().split(',')
+    abbrev[k.strip()] = v.strip()
+  return abbrev[name]
+  statefile.close()
+
 
 # tests
 print swapchars('I\'m just a chi-town coder with a nice flow.')
 print sortcat(2, 'bc', 'c', 'abc')
 print sortcat(1, 'abc', 'bc')
-
+print bluesclues('AZ')
+print bluesclues('MA')
+print bluesbooze('Arizona')
+print bluesbooze('Massachusetts')
 
