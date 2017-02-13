@@ -10,7 +10,7 @@ Do you have python 2.7 installed? Let's find out! Try typing `python --version` 
 - Write your code as "Pythonically" as possible.
 - If it seems like there should be an easier way to do it, there probably is. Use library functions where appropriate.
 - Test your code! It makes providing feedback a lot easier <3. Thanks baes :)
-  
+
 ## Step(s) to it
 ###swapchars
 Write a function that takes one (1) string argument. Return that string with the most common letter swapped with the least common letter. Yes, uppercase and lowercase count towards the same letter.
@@ -21,7 +21,7 @@ You can break ties however you want! (psst! check out [Counters](https://docs.py
 
 ### sortcat
 Write a function that takes one (1) integer argument _n_  and **an arbitrary number** of string arguments. Return the concatenation of the longest _n_  arguments from longest to shortest. If _n_  is -1, concatenate all the arguments in this fashion.
- 
+
     >>> sortcat(1, 'abc', 'bc')
     'abc'
     >>> sortcat(2, 'bc', 'c', 'abc')
@@ -44,7 +44,7 @@ We'd like you to open the file and read its contents into a dictionary indexed b
 Then write a function `bluesclues` that takes in a state abbreviation (assume perfect capitalization) and returns the full name of the state.
 
 ### Blue's Booze
-Blue owns a vineyard (she's really made it big since her hit TV show) and needs to ship wine to Nebraska. However, she doesn't know what the state abbreviation is! 
+Blue owns a vineyard (she's really made it big since her hit TV show) and needs to ship wine to Nebraska. However, she doesn't know what the state abbreviation is!
 
 Using your dictionary from above, write a function `bluesbooze` that takes in the full name of a state (again, assume perfect capitalization) and returns the state's abbreviation.
 
