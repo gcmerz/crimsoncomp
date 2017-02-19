@@ -107,8 +107,8 @@ for line in file:
 
 def bluesclues(abbreviation):
     for k in abbrev:
-        if abbreviation in k:
-            return abbrev[abbreviation]
+        if abbreviation in abbrev[k]:
+            return k
     return None
 
 ### Blue's Booze
@@ -119,10 +119,11 @@ However, she doesn't know what the state abbreviation is!
 Using your dictionary from above, write a function `bluesbooze` that takes in the full name of a state 
 (again, assume perfect capitalization) and returns the state's abbreviation.
 '''
+
 def bluesbooze(state_name):
     for k in abbrev:
-        if state_name in abbrev[k]:
-            return k
+        if state_name in k:
+            return abbrev[abbreviation]
     return None
 # Feedback?
 '''
