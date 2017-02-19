@@ -1,6 +1,9 @@
 from collections import Counter
 
 
+abbr = {}
+
+
 def swapchars(text):
     cnt = Counter()
     st = ""
@@ -28,4 +31,28 @@ def swapchars(text):
             else: swp += text[w]
         else: swp += text[w]
     print swp
-swapchars(raw_input())
+
+
+def sortcat(num, *argv):
+    sList = []
+    for arg in argv:
+        sList.append(arg)
+    sList.sort(key=len, reverse=True)
+    s = ""
+    for i in range(len(sList)):
+        if i < num:
+            s += sList[i]
+    print s
+
+
+def clues(ab):
+    stf = open('states.txt')
+    for line in stf:
+        lst = line.strip().split(',')
+        abbr[lst[1]] = lst[0]
+    return abbr[ab]
+
+
+def booze(st):
+    new_abbr = {a: b for b, a in abbr.iteritems()}
+    return new_abbr[st]
