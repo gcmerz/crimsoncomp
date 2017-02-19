@@ -1,4 +1,4 @@
-Alabama,AL
+labama,AL
 Alaska,AK
 Arizona,AZ
 Arkansas,AK
