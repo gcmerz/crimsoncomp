@@ -20,10 +20,13 @@ def sortcat(n, *args):
 	strings = list(args)
 	strings.sort(key=len, reverse=True) 
 	concat = ''
-	for i in range(n):
-		concat += strings[i]
+	if n == -1:
+		concat = "".join(strings)
+	else:
+		for i in range(n):
+			concat += strings[i]
 	return concat
-	
+
 ### Blue's Clues
 states = {}
 with open("states.txt", 'r') as file:
