@@ -29,8 +29,8 @@ abbrev = {}
 with open("states.txt") as f:
     for line in f:
         row = line.strip()
-        x, y = row.split(",")
-        abbrev[y] = x
+        value, key = row.split(",")
+        abbrev[key] = value
 
 def bluesclues(query):
     return abbrev[query]
