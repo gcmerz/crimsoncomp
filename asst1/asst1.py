@@ -17,7 +17,7 @@ def swap_chars (string):
 		if l == most_common: 
 			nstring += least_common
 		elif l == least_common: 
-			nstring() +=  most_common 
+			nstring +=  most_common 
 		else: 
 			nstring += l
 	return nstring
@@ -25,12 +25,13 @@ def swap_chars (string):
 
 # to call variable number of strings: http://stackoverflow.com/questions/919680/can-a-variable-number-of-arguments-be-passed-to-a-function
 def sortcat (n, *strings):
-	length_list = (0, 'a')
+	length_list = (0, '')
 	for string in strings: 
-		length_list = length_list, (len(string), string) 
+		length_list += len(string), string
 	# sorting via https://wiki.python.org/moin/HowTo/Sorting
 	# reverse via https://www.quora.com/How-can-I-reverse-a-list-in-python and http://stackoverflow.com/questions/3940128/how-can-i-reverse-a-list-in-python
-	med = sorted(length_list)
+	med = sorted(length_list, key = lambda length : length[1])
+	print med
 	final = ""
 	for tup in med: 
 		if n > 0: 
@@ -40,8 +41,8 @@ def sortcat (n, *strings):
 
 def bluesclues (state):
 	# code for reading into new dictionary with keys
-	# with help from/very similar to code from http://stackoverflow.com/questions/17714571/creating-a-dictionary-from-a-txt-file-using-python 
-	# and http://stackoverflow.com/questions/4803999/python-file-to-dictionary 
+	# with help from/very similar to code from ESPECIALLY http://stackoverflow.com/questions/17714571/creating-a-dictionary-from-a-txt-file-using-python 
+	# and ESPECIALLY http://stackoverflow.com/questions/4803999/python-file-to-dictionary 
 	# and http://stackoverflow.com/questions/14509996/creating-a-dictionary-in-python-from-a-text-file
 	# and http://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
 	# how to strip from http://stackoverflow.com/questions/4319236/remove-the-newline-character-in-a-list-read-from-a-file
@@ -55,8 +56,8 @@ def bluesclues (state):
 
 def bluesbooze (state): 
 	# code for reading into new dictionary with keys
-	# with help from/ very similar to code from http://stackoverflow.com/questions/17714571/creating-a-dictionary-from-a-txt-file-using-python 
-	# and http://stackoverflow.com/questions/4803999/python-file-to-dictionary 
+	# with help from/ very similar to code from ESPECIALLY http://stackoverflow.com/questions/17714571/creating-a-dictionary-from-a-txt-file-using-python 
+	# and ESPECIALLY http://stackoverflow.com/questions/4803999/python-file-to-dictionary 
 	# and http://stackoverflow.com/questions/14509996/creating-a-dictionary-in-python-from-a-text-file
 	# and http://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
 	# how to strip from http://stackoverflow.com/questions/4319236/remove-the-newline-character-in-a-list-read-from-a-file
