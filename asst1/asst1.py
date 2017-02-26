@@ -21,7 +21,10 @@ def swapchars(str):
 		else:
 			new_str += (letter)
 	return new_str
+#list comprehension
+
 print swapchars('I\'m just a chi-town coder with a nice flow')
+
 
 def sortcat(num, *strings):
 	x = num
@@ -30,11 +33,13 @@ def sortcat(num, *strings):
 		return ''.join(lst)
 	else:
 		return ''.join(lst[:x])
+		#list splice
 
 print sortcat(2, 'bc', 'c', 'abc')
 
 
 with open("states.txt", "r") as f:
+	
 	d = dict([tuple(x.strip().split(',')) for x in f])
 
 def bluesclues(state):
