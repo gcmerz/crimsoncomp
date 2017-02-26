@@ -1,4 +1,3 @@
-
 from models import Content, Article, Picture
 import json
 
@@ -64,7 +63,7 @@ def from_json():
     json_string = dump_file.read()
     dump_file.close()
 
-    # parse the JSON string into a list of dictionaries
+    # parse the JSON string into a list of dictionaries\
     all_content_dicts = json.loads(json_string)
 
     # loop over list
