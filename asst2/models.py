@@ -24,9 +24,9 @@ class Content(object):
 # TODO: Define an Article class that extends the Content class
 class Article(Content):
     def __init__(self, year, month, day, contributors, headline, content):
-        def Content.__init__(self, year, month, day, contributors):
-            self.headline = headline
-            self.content = content
+        Content.__init__(self, year, month, day, contributors)
+        self.headline = headline
+        self.content = content
 
         def show(self):
             content = {"headline" : self.headline,
@@ -42,11 +42,11 @@ class Article(Content):
 
 class Picture(Content):
     def __init__(self, year, month, day, contributors, title, caption, path):
-        def Content.__init__(self, year, month, day, contributors):
+        Content.__init__(self, year, month, day, contributors)
 
-            self.title = title
-            self.caption = caption
-            self.path = path
+        self.title = title
+        self.caption = caption
+        self.path = path
 
         def show(self):
             content = {"title" : self.title,
