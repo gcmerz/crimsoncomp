@@ -1,18 +1,19 @@
 
 from datetime import date
-
+from PIL import Image 
+import glob, os
 
 class Content(object):
     # list to keep track of all pieces of content
     existing_content = []
 
     def __init__(self, year, month, day, contributors):
+       
         # log each piece of content as existing upon creation
         self.existing_content.append(self)
 
-        # TODO: Delete the following line and replace it with a line
-        # that stores the year, month, and day (hint: check out datetime.date)
-        self.creation_date = None
+        # date of creation 
+        self.creation_date = datetime.date(year, month, day)
 
         # list of contirbutors
         self.contributors = contributors
@@ -21,8 +22,26 @@ class Content(object):
     def show(self):
         raise NotImplementedError
 
+class Article(Content):
+    def __init__(self, headline, content):
 
-# TODO: Define an Article class that extends the Content class
+        self.headline = headline
+        self.content = content 
 
+    def show(self):
+        print 'Headline: %s \n Content: %s \n Creation: %s \n Contributors: %s' (self.headline, self.content, content.creation_date, content.contributors)
+        # code from http://pillow.readthedocs.io/en/latest/reference/Image.html
+        im = Image.open("puppy.jpg")
+        return im 
 
-# TODO: Define a Picture class that extends the Content class
+class Picture(Content):
+
+    def __init__(self, title, caption, path):
+        
+        self.title = title
+        self.caption = caption 
+        self.path = path 
+
+    def show(self):
+        print 'Title %s \n Caption: %s \n Path: ' (self.title, self.caption, self.path, Content.creation_date, Content.contributors)
+
