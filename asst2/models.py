@@ -21,7 +21,6 @@ class Content(object):
     def show(self):
         raise NotImplementedError
 
-# TODO: Define an Article class that extends the Content class
 class Article(Content):
     def __init__(self, content, headline, contributors, year, month, day) : 
         Content.__init__(self, year, month, day, contributors)
