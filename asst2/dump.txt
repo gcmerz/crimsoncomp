@@ -8,7 +8,7 @@
         "month": 12, 
         "caption": "I was too \"lazy\" to come up with a caption. Get it? Because sloths are lazy? Please love me.", 
         "year": 2000, 
-        "path": "sexy.gif", 
+        "path": "sexysloth.jpg", 
         "type": "Picture", 
         "day": 1
     }, 
