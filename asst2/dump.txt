@@ -1,6 +1,6 @@
 [
     {
-contributors": [
+        "contributors": [
             "Josh", 
             "Erdos"
         ], 
