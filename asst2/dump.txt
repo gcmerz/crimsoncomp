@@ -1,1 +1,1 @@
-[{"contributors": ["Nick", "Sharon"], "headline": "I <3 Headlines", "month": 2, "content": "I do not love making content: </3", "year": 2017, "type": "Article", "day": 2}]
+[{"contributors": ["Nick", "Zenz"], "headline": "Headline", "month": 2, "content": "Content", "year": 2017, "type": "Article", "day": 26}]
