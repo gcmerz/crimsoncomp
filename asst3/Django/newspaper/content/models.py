@@ -24,4 +24,4 @@ class Contributor(models.Model):
 	last_name = models.CharField(max_length = 250, null = True)
 
 	def die(self):
-		Models.delete(using=DEFAULT_DB_ALIAS, keep_parents=False)
+		self.delete()
