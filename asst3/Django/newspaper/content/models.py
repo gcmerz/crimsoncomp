@@ -15,9 +15,6 @@ class Content(models.Model):
 class Article(Content):
 	text = models.TextField(null = True)
 
-	def show(self):
-		print (self.title)
-
 
 class Contributor(models.Model):
 	first_name = models.CharField(max_length = 250, null = True)
