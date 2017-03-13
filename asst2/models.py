@@ -17,11 +17,7 @@ class Content(object):
         # list of contirbutors
         self.contributors = contributors
 
-    # this defines a show method that has nothing in it, to be overridden later
-    def show(self):
-    	raise NotImplementedError
-
-
+    
 # TODO: Define an Article class that extends the Content class
 class Article(Content):
 	def __init__(self, headline, content):
@@ -37,6 +33,7 @@ class Picture(Content):
 		self.title = title
 		self.caption = caption
 		self.im = Image.open(path)
-
-	def show(self):
-		return '{0}: {1} {2}'.format(self.title, self.caption, self.im.show())
+    
+# this defines a show method that has nothing in it, to be overridden later
+def show(self):
+	return '{0}: {1} {2}'.format(self.title, self.caption, self.im.show())
