@@ -11,8 +11,8 @@ class Content(models.Model):
 
 class Article(Content):
     text = models.TextField()
-    # def die(self):
-    	#models.Model.delete 
+    def die(self):
+    	models.Model.delete 
 
 
 
