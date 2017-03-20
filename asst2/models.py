@@ -1,4 +1,3 @@
-
 from datetime import date
 from PIL import Image
 
@@ -12,9 +11,7 @@ class Content(object):
 
         # TODO: Delete the following line and replace it with a line
         # that stores the year, month, and day (hint: check out datetime.date)
-        self.year = datetime.date.today().year
-        self.month = datetime.date.today().month
-        self.day = datetime.date.today().day        
+        self.creation_date = date(year, month, day)     
 
         # list of contirbutors
         self.contributors = contributors
@@ -28,20 +25,24 @@ class Content(object):
 
 class Article(Content):
 
-    def __init__(headline, content):
-        self.headline = headline
+    def __init__(self, year, month, day, contributors, headline, content):
+        super(Article, self).__init__(year, month, day, contributors)
 
+        self.headline = headline
         self.content = content
 
     def show(self):
-        print self.headline
-        print self.content
+        string = str(self.contributors) + '\n'
+        string += str(self.creation_date) + '\n'
+        string += str(self.content)
+        print string
 
 # TODO: Define a Picture class that extends the Content class
 
 class Picture(Content):
 
-    def __init__(title, caption, path):
+    def __init__(self, year, month, day, contributors, title, caption, path):
+        super(Picture, self).__init__(year, month, day, contributors)
         self.title = title
 
         self.caption = caption
@@ -51,5 +52,7 @@ class Picture(Content):
     def show(self):
         im = Image.open(self.path)
         im.show()
-        print self.title
-        print self.caption
+        string = str(self.title) + '\n'
+        string += str(self.contributors) + '\n'
+        string += str(self.caption) + '\n'
+        print string
