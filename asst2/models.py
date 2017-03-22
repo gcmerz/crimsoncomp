@@ -12,6 +12,7 @@ class Content(object):
 
         # TODO: Delete the following line and replace it with a line
         # that stores the year, month, and day (hint: check out datetime.date)
+
         self.creation_date = date(year, month, day)
 
         # list of contirbutors
@@ -23,6 +24,7 @@ class Content(object):
 
 
 # TODO: Define an Article class that extends the Content class
+
  class Article(Content):
      def __init__(self, year, month, day, contributors, headline, content):
          super(Article, self).__init__(year, month, day, contributors)
@@ -48,3 +50,5 @@ class Content(object):
      def show(self):
          print(self.title)
          print(self.caption) 
+
+
