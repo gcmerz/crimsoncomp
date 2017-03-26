@@ -2,10 +2,7 @@
 
 This week, we're going to make our own mock (mock as in fake, not as in making fun; don't do that or we'll eat you) online newspaper using Django! 
 
-![django](https://raw.githubusercontent.com/harvard-crimson/comp/master/assignment3/django.gif)
-> Not this kind of Django. We don't condone aggression.
-
-We'll walk you through step-by-step (via an abridged version of the full [Django tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial01/)). Fair warning: there is quite a bit to read! However, what you actually have to do is not too nebulous. If you're ever confused, don't be afraid to ask Jessica (jessica.zhu@thecrimson.com) or Kyle (kyle.kwong@thecrimson.com) for help!
+We'll walk you through step-by-step (via an abridged version of the full [Django tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial01/)). Fair warning: there is quite a bit to read! However, what you actually have to do is not too nebulous. If you're ever confused, don't be afraid to ask Gabbi (gabbi.merz@thecrimson.com) or Lydia (lydia.goldberg@thecrimson.com) for help!
 
 ## Setting up
 1. Create the virtual environment for your project, if you haven't already. If you want to call it `crimson`, try running
