@@ -17,8 +17,8 @@ class Article(Content):
     headline = models.CharField(max_length=300)
 
 class Contributor(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=101)
+    last_name = models.CharField(max_length=101)
 
     def die(self):
       Model.delete(using=DEFAULT_DB_ALIAS, keep_parents=False)
