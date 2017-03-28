@@ -50,9 +50,9 @@ You're done for now! Now since you did lots of things that we may not know the l
 - the url of the homepage
 - the urls of the articles
 
-Then, push it to your Github! Wipe your hands of Django for the week (until next time... bwahaha).
+Then, push it to your Github!
 
-ustomize the Article Admin
+## Customize the Article Admin
 This part is tricky because it involves reading documentation (gasp!). The idea is to figure out how to plug in TinyMCE into the admin interface so that users can input formatted content (bolding, italicizing, and underlining - OH MY.)
 
 Resources:
