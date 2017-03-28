@@ -32,12 +32,12 @@ Please refer to the link [here](https://docs.djangoproject.com/en/1.8/intro/tuto
 
 Again, the link: [https://docs.djangoproject.com/en/1.8/intro/tutorial02/#creating-an-admin-user](https://docs.djangoproject.com/en/1.8/intro/tutorial02/#creating-an-admin-user)
 
-## Make article pages
+## Make Article Pages
 Let's see if you can synthesize what you've learned so far, and try a TODO without a step-by-step guide :D
 
 Remember [regexes](https://github.com/harvard-crimson/comp/blob/master/general/regexes.md) and MVT? Now's the time to put your knowledge to the test. 
 
->__TODO__ Make a template for articles, displaying all the information you see fit. Make sure you wire in a proper url in `urls.py` and a function in `views.py`! If you're having problems remembering, pull up [our presentation - Django part 1](https://www.dropbox.com/s/nv6xhekvqzt27t7/presentation3_django1.pdf?dl=0), or ask Google!
+>__TODO__ Make a template for articles, displaying all the information you see fit. Make sure you wire in a proper url in `urls.py` and a function in `views.py`! If you're having problems remembering, pull up the Django part 1 presentation, or ask Google!
 
 Don't worry if it looks ~~somewhat~~ totally shitty. The important part is that you can make the Django part of it work.
 
@@ -45,7 +45,7 @@ Don't worry if it looks ~~somewhat~~ totally shitty. The important part is that 
 Make the homepage displaying some collection of articles with links to the article pages! Be sure to take advantage of template inheritance to avoid repeating too much HTML. 
 
 ## Save
-You're done for now! Now since you did lots of things that we may not know the location of, please, in a `README.txt` file detail
+Now since you did lots of things that we may not know the location of, please, in a `README.txt` file detail
 
 - the url of the homepage
 - the urls of the articles
