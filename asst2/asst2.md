@@ -18,20 +18,20 @@ In `models.py`, we've created a `Content` class that reflects the general idea o
 
 It should have:
 
-- `contributors`: a list of people (strings) that helped create this content 
-- `creation_date`: the date the content was created.  Note: not necessarily the date that the Python object is created. 
+- `contributors`: a list of people (strings) that helped create this content
+- `creation_date`: the date the content was created.  Note: not necessarily the date that the Python object is created.
 - a `show` method: displays the piece of content when called.
 
 `self.contributors` and `self.creation_date` must be set in the `__init__` method.
 
-> __TODO__: `creation_date` is up to you to implement! Take a look at existing documentation for `datetime.date` for more details (google it). 
+> __TODO__: `creation_date` is up to you to implement! Take a look at existing documentation for `datetime.date` for more details (google it).
 
 The `show` method currently raises a `NotImplementedError`, which means we'll have to override it later when extending it to our own custom classes if we don't want the interpreter to yell at us.
 
 ## What About Articles?
 Some of the content we produce at the Crimson are articles, and some are pictures. Having a `Content` class is all fine and dandy, but we soon realize that it's too general for our needs.
 
-To fix this, we extend `Content` to two different classes that behave slightly differently - `Article` and `Picture`. 
+To fix this, we extend `Content` to two different classes that behave slightly differently - `Article` and `Picture`.
 
 In addition to the regular `Content` attributes, an `Article` object should have:
 
@@ -44,7 +44,7 @@ In addition to the regular `Content` attributes, a `Picture` object should have:
 - `title`: the title of the image
 - `caption`: a caption for the image
 - `path`: the path to where the image file is located
-- a `show` method that displays all the info in a pretty way, and also displays the image using [Pillow's Image module](http://pillow.readthedocs.org/en/latest/reference/Image.html). 
+- a `show` method that displays all the info in a pretty way, and also displays the image using [Pillow's Image module](http://pillow.readthedocs.org/en/latest/reference/Image.html).
 
 > __TODO__: Write an Article class and a Picture class that have these properties.
 
@@ -53,7 +53,7 @@ _Note: again, make sure that you name your attributes carefully, since the next 
 ## Load me up, Scotty!
 Here comes the fun part (and the part that verifies that you did the first parts right).
 
-Inside `loadcontent.py` are two methods, `to_json` and `from_json`. 
+Inside `loadcontent.py` are two methods, `to_json` and `from_json`.
 
 - `to_json` dumps all your existing `Content` objects into a document called `dump.txt`.
 - `from_json` retrieves all the json strings in `dump.txt` and loads them into `Content.existing_content`.
@@ -70,7 +70,7 @@ Import the functions from `loadcontent.py` as well as the classes from `models.p
 
 You can also create new objects of your own and dump them into `dump.txt`, close your Python shell, and then retrieve them later.
 
-Now you can play with these objects - call `show`, modify their contents, go crazy! 
+Now you can play with these objects - call `show`, modify their contents, go crazy!
 
 ## Feedback?
 You're done! Congrats! Just push your code to your Github, and you can wipe your hands of the whole thing.
