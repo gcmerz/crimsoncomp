@@ -1,4 +1,4 @@
-
+from PIL import Image
 from datetime import date
 
 
@@ -10,9 +10,7 @@ class Content(object):
         # log each piece of content as existing upon creation
         self.existing_content.append(self)
 
-        # TODO: Delete the following line and replace it with a line
-        # that stores the year, month, and day (hint: check out datetime.date)
-        self.creation_date = None
+        self.creation_date = date(year, month, day)
 
         # list of contirbutors
         self.contributors = contributors
@@ -22,7 +20,35 @@ class Content(object):
         raise NotImplementedError
 
 
-# TODO: Define an Article class that extends the Content class
+class Article(Content):
+    
+    def __init__(self, year, month, day, contributors, headline, content):
+        super(Article, self).__init__(year, month, day, contributors)
+
+        self.headline = headline
+        self.content = content
+
+    def show(self):
+        string = '\n-----' + self.headline + '-----\n\n'
+        string += 'Author(s): ' + ', '.join(self.contributors) + '\n'
+        string += 'Date created: ' + self.creation_date.isoformat() + '\n\n'
+        string += str(self.content) + '\n'
+        print string
 
 
-# TODO: Define a Picture class that extends the Content class
+class Picture(Content):
+    
+    def __init__(self, year, month, day, contributors, title, caption, path):
+        super(Picture, self).__init__(year, month, day, contributors)
+
+        self.title = title
+        self.caption = caption
+        self.path = path
+
+    def show(self):
+        string = '\n-----' + self.title + '-----\n\n'
+        string += 'Author(s): ' + ', '.join(self.contributors) + '\n'
+        string += 'Date created: ' + self.creation_date.isoformat() + '\n\n'
+        string += self.caption + '\n'
+        print string
+        Image.open(self.path).show()
