@@ -4,7 +4,7 @@ from django.db import models
 
 # Create your models here.
 class Content(models.Model):
-	title = models.CharField(max_length=500)
+    title = models.CharField(max_length=500)
     subtitle = models.CharField(max_length=500)
     contributors = models.ManyToManyField('Contributor',
                                           related_name='content')
@@ -20,7 +20,7 @@ class Contributor(models.Model):
     first_name = models.CharField(max_length=500)
     last_name = models.CharField(max_length=500)
     def die(self):
-        Model.delete(using=DEFAULT_DB_ALIAS, keep_parents=True)
+        self.delete()
 
 class Image(Content):
 	caption = models.CharField(max_length=500)
