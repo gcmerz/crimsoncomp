@@ -12,12 +12,14 @@ Do you have python 2.7 installed? Let's find out! Try typing `python --version` 
 - Test your code! It makes providing feedback a lot easier <3. Thanks baes :)
   
 ## Step(s) to it
-###swapchars
+### swapchars
 Write a function that takes one (1) string argument. Return that string with the most common letter swapped with the least common letter. Yes, uppercase and lowercase count towards the same letter.
 
     >>> swapchars('I\'m just a chi-town coder with a nice flow.')
     "U'm jist a chu-town coder wuth a nuce flow."
 You can break ties however you want! (psst! check out [Counters](https://docs.python.org/2/library/collections.html#collections.Counter))
+###
+
 
 ### sortcat
 Write a function that takes one (1) integer argument _n_  and **an arbitrary number** of string arguments. Return the concatenation of the longest _n_  arguments from longest to shortest. If _n_  is -1, concatenate all the arguments in this fashion.
