@@ -1,0 +1,49 @@
+{% extends 'content/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block content1 %}
+
+<header class="header" id="header"><!--header-start-->
+	<div class="container">
+    	<figure class="logo animated fadeInDown delay-07s">
+        	<a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>	
+        </figure>	
+        <h1 class="animated fadeInDown delay-07s">Welcome To PowerhouseofthePaper</h1>
+        <ul class="we-create animated fadeInUp delay-1s">
+        	<li>I am a sad boi trying to finish this assignment.</li>
+        </ul>
+    </div>
+</header><!--header-end-->
+{% endblock %}
+
+{% block content2 %}
+<section class="main-section paddind" id="Articles"><!--main-section-start-->
+	<div class="container">
+    	<h2>Articles</h2>
+    	<h6>Fresh articles hot off the press</h6>
+      <!-- 
+        <div class="portfolioFilter">  
+        <ul class="Portfolio-nav wow fadeIn delay-02s">
+        	<li><a href="#" data-filter="*" class="current" >All</a></li>
+            <li><a href="#" data-filter=".branding" >Branding</a></li>
+            <li><a href="#" data-filter=".webdesign" >Web design</a></li>
+            <li><a href="#" data-filter=".printdesign" >Print design</a></li>
+            <li><a href="#" data-filter=".photography" >Photography</a></li>
+        </ul>
+       </div> 
+      -->
+        
+	</div>
+    <div class="portfolioContainer wow fadeInUp delay-04s">
+            	{% for article in articles %}
+                    <div class="Portfolio-box branding">
+                        <h3><a href="articles/{{ article.title }}">{{ article.title }}</a></h3>
+                        <br>
+                        <p>{{ article.pub_date }}</p>
+                    </div>
+                {% endfor %}
+    </div>
+</section><!--main-section-end-->
+
+{% endblock %}

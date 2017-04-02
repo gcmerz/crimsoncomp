@@ -1,0 +1,21 @@
+{% extends 'content/base.html' %}
+{% load static %}
+
+{% block title %}{{ article.title }}{% endblock %}
+{% block content1 %}
+    <header class="header" id="header"><!--header-start-->
+        <div class="container">
+            <h1 class="animated fadeInDown delay-07s"><b>{{ article.title }}</b></h1>
+            <h1 class="animated fadeInDown delay-07s">{{ article.subtitle }}</h1>
+            <p class="animated fadeInDown delay-07s">{{ article.pub_date }}</p>
+            <ul class="we-create animated fadeInUp delay-1s">
+                {{ article.text|safe }}
+            </ul>
+            <p class="we-create animated fadeInUp delay-1s">
+                {% for author in authors %}
+                    {{ author }}
+                {% endfor %}
+            </p>
+        </div>
+    </header>
+{% endblock %}

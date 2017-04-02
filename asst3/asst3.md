@@ -202,7 +202,7 @@ First, let's ask Django to create our migration for us. Run
 
     python manage.py makemigrations content
 
-You should see some output telling you that it made a migration called called `0001_initial.py`. You'll also see some output giving you a summary of what that migration will do, but that's not good enough for us. Let's take a look at the actual migration!
+You should see some output telling you that it made a migration called `0001_initial.py`. You'll also see some output giving you a summary of what that migration will do, but that's not good enough for us. Let's take a look at the actual migration!
 
 If you look inside the `content/migrations/` directory, you should see a newly created file `0001_initial.py`. Take a peek inside! At this point there's no need to understand exactly what's going on in there, but get a feel for what these migration files look like.
 
