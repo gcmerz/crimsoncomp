@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from tinymce.models import HTMLField
+from datetime import datetime
 
 # Create your models here.
 class Content(models.Model):
@@ -8,10 +10,10 @@ class Content(models.Model):
     subtitle = models.CharField(max_length=500)
     contributors = models.ManyToManyField('Contributor',
                                           related_name='content')
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published', default=datetime.now)
 
 class Article(Content):
-    text = models.TextField()
+    text = HTMLField()
 
 class Image(Content):
     filepath = models.FilePathField()
@@ -19,6 +21,7 @@ class Image(Content):
 class Contributor(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    dob = models.DateTimeField('birthday', null=True)
 
     def die(self):
         self.delete()

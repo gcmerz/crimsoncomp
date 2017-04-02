@@ -11,6 +11,13 @@ URL Adjustments
 
 ----------
 
+New Model Fields
+----------------
+> **Note:**
+> - Field for the author's date of birth
+
+----------
+
 Thank you guys! I hope you enjoy,  and please do let me know if you need anything else!
 
 -potc

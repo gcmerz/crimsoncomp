@@ -9,7 +9,7 @@
             <h1 class="animated fadeInDown delay-07s">{{ article.subtitle }}</h1>
             <p class="animated fadeInDown delay-07s">{{ article.pub_date }}</p>
             <ul class="we-create animated fadeInUp delay-1s">
-                <li>{{ article.text }}</li>
+                {{ article.text|safe }}
             </ul>
             <p class="we-create animated fadeInUp delay-1s">
                 {% for author in authors %}
