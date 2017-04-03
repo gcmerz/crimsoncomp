@@ -1,0 +1,57 @@
+{% load static %}
+
+<title>YEEZY YEEZY YEEZY</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="{% static 'articles/kanye.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'articles/style.css' %}" />
+
+{% if latest_articles %}
+    <h1 class="great-text">welcome to the greatest kanye west fansite in the world</h1>
+    <img width="40" height="40" src="https://i.ytimg.com/vi/2D-ZO2rGcSA/maxresdefault.jpg">
+    <h3>this website works best with SOUND UP turn it UP</h3>
+
+    <img width="200" height="200" class="mouse-follow" src="https://www.flightclub.com/media/catalog/product/cache/1/image/800x570/9df78eab33525d08d6e5fb8d27136e95/a/d/adidas-yeezy-boost-350-turtle-blugra-cwhite-201114_1.jpg">
+    <h2 class="comic">Cop some <a href="http://i.dailymail.co.uk/i/pix/2016/06/10/21/35235F1B00000578-3635936-image-a-55_1465589065353.jpg">SNEEZYS</a> acHOO</h4>
+
+    <h2 class="comic">TOP 10 (TEN) RAPPERS DEAD OR ALIVE</h2>
+    <div class="top-ten-wrappers">
+        <ul>
+            <li>K DOT</li>
+            <li>IGGY AZLEA</li>
+            <li>CAL CHUCHESTA</li>
+            <li>GZA</li>
+            <li>MATTY B RAPS</li>
+            <li>MACKLEMORE</li>
+            <li>PENTATONIX</li>
+        </ul>
+    </div>
+
+    <h2 class="comic">TOP 10 (TEN) BEST KANYE ALBUMS</h2>
+    <div class="top-ten-wrappers">
+        <ul>
+            <li>COLLEGE DROPOUT</li>
+            <li>LATE REGISTRATION</li>
+            <li>GRADUATION</li>
+            <li>MBDTF</li>
+            <li>TLOP</li>
+            <li>WTT</li>
+            <li>AWAKEN, MY LOVE</li>
+            <li>UNTITLED UNMASTERED</li>
+            <li>2014 FOREST HILLS DRIVE</li>
+            <li>THE NEW CALASSIC</li>
+        </ul>
+    </div>
+
+    <h2 class="great-text">CHECK OUT THESE ARTICLES</h2>
+    <div class="article-wrapper">
+	    <ul>
+        {% for article in latest_articles %}
+            <li><a href="/{{ article.id }}/">{{ article.title }}</a></li>
+    	{% endfor %}
+        </ul>
+    </div>
+
+    <img class="banner" src="http://i.imgur.com/QjbHhAN.jpg">
+
+    <iframe width="1" height="1" class="hidden" src="https://www.youtube.com/embed/WcH9EDlTW8U?autoplay=1"></iframe>
+{% endif %}

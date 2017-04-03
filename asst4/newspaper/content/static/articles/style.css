@@ -1,0 +1,64 @@
+body {
+    background-image: url("https://media.giphy.com/media/aI6O9VZvuTe36/giphy.gif");
+    color: white;
+}
+
+@keyframes greatfont {
+    0% {
+        font-size: 20px;
+        transform: rotate(0deg);
+    }
+    50% {
+        font-size: 40px;
+        transform: rotate(180deg);
+    }
+    100% {
+        font-size: 20px;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes banner {
+    0% {
+        margin-left: -400px;
+    }
+    100% {
+        margin-left: 1200px;
+    }
+}
+
+.article-wrapper {
+    background-color: red;
+}
+
+.top-ten-wrappers {
+    background-image: url("http://i.imgur.com/1WnKWtq.jpg");
+    background-size: contain;
+    width: 200px;
+    height: 400px;
+}
+
+.great-text {
+    text-align: center;
+    animation: greatfont 4s infinite;
+    height: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.banner {
+    animation: banner 4s infinite;
+}
+
+.mouse-follow {
+    position: absolute;
+    z-index: -1;
+}
+
+.comic {
+    font-family: Comic Sans MS;
+    text-align: center;
+    color: red;
+}
