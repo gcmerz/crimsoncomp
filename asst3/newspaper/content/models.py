@@ -16,6 +16,7 @@ class Content(models.Model):
 class Article(Content):
     text = models.TextField()
     headline = models.CharField(max_length=200)
+    created_date = models.DateTimeField(default=timezone.now)
 
 
 class Image(Content):
@@ -31,3 +32,16 @@ class Contributor(models.Model):
     def die(self):
       Model.delete(using=DEFAULT_DB_ALIAS, keep_parents=False)
 
+
+
+# additional stuff
+
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+
+
+class Choice(models.Model):
+    question = models.ForeignKey(Question)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
