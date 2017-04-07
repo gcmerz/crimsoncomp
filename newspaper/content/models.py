@@ -13,8 +13,9 @@ class Content(models.Model):
 
 class Article(Content):
 	# Used: https://docs.djangoproject.com/en/1.10/ref/models/fields/
+    headline = models.CharField(max_length=500)
     text = models.TextField()
-
+    citations = models.CharField(max_length=500)
 
 class Contributor(models.Model):
     first_name = models.CharField(max_length=500)
