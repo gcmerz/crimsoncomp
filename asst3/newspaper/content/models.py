@@ -13,6 +13,7 @@ class Content(models.Model):
 class Article(Content):
     headline = models.CharField(max_length=500)
     text = models.TextField()
+    citations = models.CharField(max_length=500, default="")
 
 
 class Contributor(models.Model):

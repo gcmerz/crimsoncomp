@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Articles{% endblock title %}
+
+{% block content %}
+<h1>Articles</h1>
+{% for article in articles %}
+    <h2><a href="{% url 'article_detail' pk=article.pk %}">{{ article.headline }}</a></h2>
+    <h5>{{ article.contributors }}</h5>
+    <h5>{{ article.pub_date }}</h5>
+    <p>{{ article.text }}</p>
+{% endfor %}
+{% endblock content %}
