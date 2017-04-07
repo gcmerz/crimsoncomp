@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/', views.index, name='index'),
     url(r'^articles/', views.articles, name='articles'),
+    url(r'^article/(?P<pk>\d+)/$', views.article, name='article'),
 ]

@@ -1,5 +1,7 @@
 from django.contrib import admin
 
-from .models import Question
+from models import Article, Contributor
 
-admin.site.register(Question)
+# Register your models here.
+admin.site.register(Article)
+admin.site.register(Contributor)

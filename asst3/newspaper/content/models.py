@@ -8,6 +8,7 @@ from PIL import Image
 class Content(models.Model):
     title = models.CharField(max_length=500)
     subtitle = models.CharField(max_length=500)
+    citations = models.CharField(max_length=500, default= "")
     contributors = models.ManyToManyField('Contributor',
                                           related_name='content')
     pub_date = models.DateTimeField('date published', default=timezone.now)
