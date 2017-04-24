@@ -1,5 +1,9 @@
 
 from datetime import date
+<<<<<<< HEAD
+from PIL import Image
+=======
+>>>>>>> seed_repo/master
 
 
 class Content(object):
@@ -12,7 +16,11 @@ class Content(object):
 
         # TODO: Delete the following line and replace it with a line
         # that stores the year, month, and day (hint: check out datetime.date)
+<<<<<<< HEAD
+        self.creation_date = date(year, month, day)
+=======
         self.creation_date = None
+>>>>>>> seed_repo/master
 
         # list of contirbutors
         self.contributors = contributors
@@ -23,6 +31,41 @@ class Content(object):
 
 
 # TODO: Define an Article class that extends the Content class
+<<<<<<< HEAD
+class Article(Content):
+    # define the class with all the inputs that Content had plus the new ones
+    def __init__(self, year, month, day, contributors, headline, content):
+        # calls Content's initializer
+        Content.__init__(self, year, month, day, contributors)
+
+        # stores headline value
+        self.headline = headline
+        # stores content string
+        self.content = content
+
+    def show(self):
+        print("Date Created: " + creation_date + "\nContributors: " + contributors + "\nHeadline: " + headline + "\nContent: " + content)
+
+# TODO: Define a Picture class that extends the Content class
+class Picture(Content):
+    # define the class with all the inputs that Content had plus the new ones
+    def __init__(self, year, month, day, contributors, title, caption, path):
+        # calls Content's initializer
+        Content.__init__(self, year, month, day, contributors)
+
+        # stores title string
+        self.title = title
+        # stores caption string
+        self.caption = caption
+        # stores path string
+        self.path = path
+
+    def show(self):
+        print("Date Created: " + creation_date + "\nContributors: " + contributors + "\nTitle: " + title + "\nCaption: " + caption)
+        im = Image.open(path)
+        im.show()
+=======
 
 
 # TODO: Define a Picture class that extends the Content class
+>>>>>>> seed_repo/master
