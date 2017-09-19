@@ -8,7 +8,6 @@ def swapchars(word):
       most, _ = letters.most_common()[1]
   # figure out which letter is least common
   least, _ = letters.most_common()[-1]
-  print ('replacing ' + most + 'with ' + least)
   return word.replace(most, least)
 
 def sortcat(num, *args):
