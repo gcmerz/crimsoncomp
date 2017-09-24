@@ -36,7 +36,6 @@ with open("states.txt") as f:
         states_dict[key.strip("\n")] = val
 
 def bluesclues(abbrev):
-    print states_dict[abbrev]
     return states_dict[abbrev]
 
 def bluesbooze(name):
