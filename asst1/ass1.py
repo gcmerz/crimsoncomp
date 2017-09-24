@@ -27,7 +27,7 @@ You can break ties however you want! (psst! check out [Counters](https://docs.py
 x=input()
 def swapchars (x):
     my_list=x.split()
-    for i in xrange(len(my_list))
+    for i in xrange(len(my_list)):
         c=Counter(my_list)
         max_lt=0
         min_lt=0
@@ -49,22 +49,22 @@ def swapchars (x):
     >>> sortcat(2, 'bc', 'c', 'abc')
     'abcbc' '''
 
-    n=raw_input("Enter Integer:")
-    my_list=raw_input
-    conc=[]
-    def sortcat(n, my_list)
-        if n=-1:
-            conc=my_list
-        if n!=-1:
-            l=0
-            max_word=my_list[0]
-            for i in xrange(i>0&&i<n):
-                for elt in my_list:
-                    if len(elt)>l:
-                        l=len(elt)
-                        max_word=elt
-                conc.append(max_word)
-        print conc.join()
+n=raw_input("Enter Integer:")
+my_list=raw_input
+conc=[]
+def sortcat(n, my_list):
+    if n==-1:
+        conc=my_list
+    if n!=-1:
+        l=0
+        max_word=my_list[0]
+        for i in xrange(i>>0 & i<<n):
+            for elt in my_list:
+                if len(elt)>l:
+                    l=len(elt)
+                    max_word=elt
+            conc.append(max_word)
+    print conc.join()
 
         
 
@@ -95,17 +95,17 @@ for i in xrange(len(myList)):
     name=state[1]
     abbrev[abbr]=name
 
-def bluesclues(x)
+def bluesclues(x):
     print abbrev[x]
 
 ### Blue's Booze
 '''Blue owns a vineyard (she's really made it big since her hit TV show) and needs to ship wine to Nebraska. However, she doesn't know what the state abbreviation is! 
 
 Using your dictionary from above, write a function `bluesbooze` that takes in the full name of a state (again, assume perfect capitalization) and returns the state's abbreviation.'''
-def bluesbooze(y)
+def bluesbooze(y):
     for abbr, name in abbrev.iteritems():
-    if name== y:
-        print abbr
+        if name== y:
+            print abbr
 # Feedback?
 #You're done! Congrats! Be sure to save your changes and push to your Github. Thanks, dude!
 
