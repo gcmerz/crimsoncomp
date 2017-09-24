@@ -21,7 +21,7 @@ def sortcat(n, *args):
 	strings.sort(key=len, reverse=True) 
 	concat = ''
 	if n == -1:
-                concat = "".join(strings)
+		concat = "".join(strings)
 	else:
 		for i in range(n):
 			concat += strings[i]
@@ -31,8 +31,8 @@ def sortcat(n, *args):
 states = {}
 with open("states.txt", 'r') as file:
 	for line in file:
-    	(state, abbrev) = line.split(',')
-    	states[abbrev.strip('\n')] = state
+		(state, abbrev) = line.split(',')
+		states[abbrev.strip('\n')] = state
 
 def bluesclues(abbrev):
 	return states[abbrev]
