@@ -2,7 +2,7 @@ from collections import Counter
 
 ### swapchars
 def swapchars(string):
-        string = string.lower()
+	string = string.lower()
 	most_common = Counter(x for x in string if x.isalpha()).most_common()[0][0]
 	least_common = Counter(x for x in string if x.isalpha()).most_common()[-1][0]
 	swapped = ''
@@ -30,7 +30,7 @@ def sortcat(n, *args):
 ### Blue's Clues
 states = {}
 with open("states.txt", 'r') as file:
-    for line in file:
+	for line in file:
     	(state, abbrev) = line.split(',')
     	states[abbrev.strip('\n')] = state
 
