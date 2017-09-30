@@ -1,20 +1,20 @@
-def sortcat (number, string):
+def sortcat (num, string):
 	output = ""
-	string = string.split()
-	string.sort(key = len)
-	
+	words = string.split()
+	words = sorted(words, key=len, reverse=True)
+	print num
 	i = 0
-	if number > 0:
-		while i < number:
-			output += string[i]
-			i = i + 1
-	else:
-		for words in string:
-			output += string[i]
-			i = i + 1
+	if num > 0:
+		while i < num:
+			output += words[i]
+			i += 1
+	if test == -1:
+		while i < len(words):
+			output += words[i]
+			i += 1
 	print output
 	return output
 
-number = raw_input("Integer: ")
 string = raw_input("Strings: ")
-sortcat(number, string)
+num = raw_input("Number: ")
+sortcat(num, string)
