@@ -12,12 +12,19 @@ def swapchars(line):
 			noli[i]=noli[i].upper()
 	return "".join(noli)
 
+def sortcat(n, *args): # stole the solution from code review sorry
+	s = sorted(args, key = lambda x: len(x), reverse = True)
+	if n==-1:
+		return "".join(s)
+	return "".join(s[:n])
+
 def bluesclues(abb):
 	f = open("states.txt")
 	dic = {}
 	for lin in f:
 		state = re.sub("\n", "", lin).split(",")
 		dic[state[1]] = state[0]
+	f.close()
 	return dic[abb]
 
 def bluesbooze(abb):
@@ -26,7 +33,10 @@ def bluesbooze(abb):
 	for lin in f:
 		state = re.sub("\n", "", lin).split(",")
 		dic[state[0]] = state[1]
+	f.close()
 	return dic[abb]
+
 print swapchars('I\'m just a chi-town coder with a nice flow.')
+print sortcat(3, 'abc', 'bc', 'cd')
 print bluesclues("TX")
 print bluesbooze("Texas")
