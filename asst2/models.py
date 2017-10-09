@@ -1,5 +1,6 @@
 
 from datetime import date
+from PIL import Image
 
 
 class Content(object):
@@ -23,6 +24,22 @@ class Content(object):
 
 
 # TODO: Define an Article class that extends the Content class
-
+class Article(Content):
+    def __init__(self, year, month, day, contributors, headline, content):
+        super(Article, self).__init__(year, month, day, contributors)
+        self.headline=headline
+        self.content=content
+    def show(self):
+        print self.headline
+        print self.content
 
 # TODO: Define a Picture class that extends the Content class
+class Picture(Content):
+    def __init__(self, year, month, day, contributors, title, caption, path):
+        super(Picture, self).__init__(year, month, day, contributors)
+        self.title=title
+        self.caption=caption
+        self.path=path 
+    def show(self):
+        im = Image.open(self.path)
+        im.show(title=None, command=None)
