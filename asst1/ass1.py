@@ -49,6 +49,30 @@ def swapchars (x):
     >>> sortcat(2, 'bc', 'c', 'abc')
     'abcbc' '''
 
+def sortcat(n, *args):
+    # *args lets you put in an arbitrary number of arguments 
+    s=sorted(arg, key=lamda x: len(x), reverse=True)
+
+    if n=-1:
+        return "".join(s)
+    return "".join(s[:n])
+
+test_sortcat(n, *args):
+assert sortcat(-1, 'crim', 'crime', 'crimee')=='crimeecrimecrim'
+assert 
+
+def blues_clues():
+    f=open('states.txt', 'w')
+    #"w"=write
+    f.close()
+
+    with open('states.txt','r') as f:
+        for line in f
+    #don't need "close"
+
+
+
+
 n=raw_input("Enter Integer:")
 my_list=raw_input
 conc=[]
