@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Muh Home Page</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Asap|Poiret+One" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+			<h1><a href="/">Muh Home Page</a></h1>
+			<h4><a href="/admin">Log-In</a></h4>
+		</div>
+		<div class="content container">
+    		<div class="row">
+       			<div class="col-md-8">
+ 					{% for content in contents %}
+    					<div class="post">
+        					<h2><a href="{% url 'posttemp' pk=content.pk %}">{{ content.title }}</a></h1>
+        					<h3>{{ content.subtitle}}</h2>
+        					<p>Date: {{ content.pub_date }}</p>
+    					</div>
+        			{% endfor %}
+       			</div>
+    		</div>
+		</div>
+	</body>	
+</html>
+
