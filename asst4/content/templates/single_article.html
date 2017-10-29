@@ -17,6 +17,6 @@
 				{{ contributor.year }}
 			</h3>
 		{% endfor %}
-		<p> {{ article.text }} </p>
+		<p> {{ article.text | safe }} </p>
 	</body>
 </html>
