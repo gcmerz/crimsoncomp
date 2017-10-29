@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title> {{ article.title }} </title>
+		<style>
+			body {background-color: powderblue;}
+			h1 {color: black;}
+			h2 {color: teal;}
+		</style>
+	</head>
+	<body>
+		<h1> {{ article.title }} </h1>
+		<h2> {{ article.subtitle }} </h2> 
+		{% for contributor in article.contributors.all %}
+			<h3>	
+				{{ contributor.first_name }}
+				{{ contributor.last_name }}
+				{{ contributor.year }}
+			</h3>
+		{% endfor %}
+		<p> {{ article.text | safe }} </p>
+	</body>
+</html>
