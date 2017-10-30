@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{{ article.title }}</title>
+		<title>{{ article.title | safe}}</title>
 	</head>
 	<body>
 		<div>
-            <h1><a href="/">{{ article.title }}</a></h1>
+            <h1><a href="/">{{ article.title | safe}}</a></h1>
         </div>
 
         <div>
-            <p>{{article.pub_date}}</p>
+            <p>{{article.pub_date | safe}}</p>
             {% for author in article.contributors.all %}
-            	<p>{{author.first_name}} {{author.last_name}}</p>
+            	<p>{{author.first_name | safe}} {{author.middle_name | safe}} {{author.last_name | safe}}</p>
             {% endfor %}
-            <p>{{article.subtitle}}</p>
+            <p>{{article.subtitle | safe}}</p>
             <p></p>
-            <p>{{article.text}}</p>
+            <p>{{article.text | safe}}</p>
         </div>
 	</body>
 </html>

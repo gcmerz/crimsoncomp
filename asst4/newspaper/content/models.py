@@ -22,9 +22,11 @@ class Article(Content):
 
 class Contributor(models.Model):
     first_name = models.CharField(max_length=500)
+    middle_name = models.CharField(max_length=500)
     last_name = models.CharField(max_length=500)
     def show(self):
         print(self.first_name)
+        print(self.middle_name)
         print(self.last_name)
     def die(self):
         self.delete()

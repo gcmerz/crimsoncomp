@@ -9,12 +9,12 @@
         </div>
             {% for article in articles %}
             <div>
-                <h2>{{article.title}}</h2>
-                <p>{{article.pub_date}}</p>
+                <h2>{{article.title | safe}}</h2>
+                <p>{{article.pub_date | safe}}</p>
                 {% for author in article.contributors.all %}
-                    <p>{{author.first_name}} {{author.last_name}}</p>
+                    <p>{{author.first_name | safe}} {{author.middle_name | safe}} {{author.last_name | safe}}</p>
                 {% endfor %}
-                <p>{{article.subtitle}}</p>
+                <p>{{article.subtitle | safe}}</p>
             </div>
             {% endfor %}
         </div>

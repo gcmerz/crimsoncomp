@@ -6,3 +6,5 @@ homepage:
 
 articles:
 .../article/#/
+
+added middle_name to Contributor.
