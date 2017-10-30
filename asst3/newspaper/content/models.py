@@ -10,18 +10,18 @@ class Content(models.Model):
 	subtitle = models.CharField(max_length=500)
 	contributors = models.ManyToManyField('Contributor', related_name = 'content')
 	pub_date = models.DateTimeField('date published')
+	def __str__(self):
+		return "%s %s %s %s" % (self.title, self.subtitle, self.contributors, str(self.pub_date))
 
 class Article(Content):
 	text = models.TextField()
-	def show(self):
-		print self.title+"\n"+self.subtitle+"\n"+"".join(self.contributors)+"\n"+str(self.pub_date)
+	def __str__(self):
+		return "%s %s %s %s %s" % (self.title, self.subtitle, self.text, self.contributors, str(self.pub_date))
 
 class Contributor(models.Model):
 	first_name = models.CharField(max_length=500)
 	last_name = models.CharField(max_length=500)
 	def die(self):
-		instance = Contributor.objects.get(id=id)
-		instance.delete()
-		#I couldn't quite figure this one out :(
-	def show(self):
-		print self.first_name
+		self.delete()
+	def __str__(self):
+		return "%s %s" % (self.first_name, self.last_name)
