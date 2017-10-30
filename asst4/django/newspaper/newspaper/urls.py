@@ -19,5 +19,6 @@ from content import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^content/(?P<Content_id>[0-9]+)/$', views.get_content)
+    url(r'^content/(?P<content_id>[0-9]+)/$', views.get_content),
+    url(r'^home/$', views.get_home)
 ]
