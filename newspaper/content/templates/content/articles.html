@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ article.title }}</title>
+	</head>
+	<body>
+		<div>
+            <h1><a href="/">{{ article.title }}</a></h1>
+        </div>
+
+        <div>
+            <p>{{article.pub_date}}</p>
+            {% for author in article.contributors.all %}
+            	<p>{{author.first_name}} {{author.last_name}}</p>
+            {% endfor %}
+            <p>{{article.subtitle}}</p>
+            <p></p>
+            <p>{{article.text}}</p>
+        </div>
+	</body>
+</html>
