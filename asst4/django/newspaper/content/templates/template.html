@@ -5,8 +5,13 @@
 <body>
 <h2> {{ content.title }} </h2>
 <p> {{ content.subtitle }} </p>
-<p> {{ content.contributors }} </p>
+<p> 
+	Contributors:
+	{% for person in article.contributors.all %}
+	{{person.first_name}} {{person.last_name}}
+	{% endfor %}
+</p>
 <p> {{ content.pub_date }} </p>
-<p> {{ article.text }} </p>
+<p> {{ content.text }} </p>
 </body>
 </html>

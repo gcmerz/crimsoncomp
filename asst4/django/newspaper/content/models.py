@@ -11,7 +11,7 @@ class Content(models.Model):
                                           related_name='content')
     pub_date = models.DateTimeField('date published')
     def __str__(self):
-        return "Title: %s\nSubtitle: %s\nBy: %s\nDate: %s\n%s\n" % (self.headline, self.subtitle, self.contributors, self.pub_date)
+        return "Title: %s\nSubtitle: %s\nBy: %s\nDate: %s\n" % (self.title, self.subtitle, self.contributors, self.pub_date)
 
 
 class Article(Content):
@@ -19,7 +19,7 @@ class Article(Content):
     #   super(Article, self).__init__(title, subtitle, contributors, pub_date)
     text = models.TextField()
     def __str__(self):
-        return "Title: %s\nSubtitle: %s\nBy: %s\nDate: %s\n%s\n" % (self.headline, self.subtitle, self.contributors, self.pub_date, self.text)
+        return "Title: %s\nSubtitle: %s\nBy: %s\nDate: %s\n%s\n" % (self.title, self.subtitle, self.contributors, self.pub_date, self.text)
 
 
 class Contributor(models.Model):
