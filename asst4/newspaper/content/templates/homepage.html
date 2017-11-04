@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{title}}</title>
+	</head>
+	<body>
+
+		<h1> Read the articles here: </h1>
+ 		<a href = "http://127.0.0.1:8000/article/5/"> Article 1 </a></p>
+ 		<a href = "http://127.0.0.1:8000/article/7/"> Article 2 </a></p>
+ 		<br>
+		{% for article in articles %}
+			<h2> {{ article.title }} </h2>
+			<h3> {{ article.subtitle }} </h3> 
+ 			{% for contributor in article.contributors.all %}
+ 				<h4>	
+ 					{{ contributor.first_name }}
+ 					{{ contributor.last_name }}
+ 					{{ contributor.year }}
+ 				</h4>
+ 			{% endfor %}
+ 			<h4> {{article.pub_date}} </h4>
+ 		{% endfor %}		
+	</body>
+</html>
