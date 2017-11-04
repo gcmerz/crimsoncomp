@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{article.title}}</title>
+	</head>
+	<body>
+		<h2> {{ article.subtitle }} </h2> 
+		<p>
+			Contributors:
+ 			{% for contributor in article.contributors.all %}
+ 					{{ contributor.first_name }}
+ 					{{ contributor.last_name }}
+ 					{{ contributor.year }}
+ 			{% endfor %}
+		</p>
+		<p> {{article.pub_date}} </p>
+ 		<p> {{ article.text }} </p>
+	</body>
+</html>
