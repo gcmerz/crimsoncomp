@@ -1,6 +1,6 @@
 Assignment 5 Questions
 
-Name: _________YOUR NAME HERE________
+Name: _________Nazeli Hagen________
 
 ################################################################################
 ################################# TAGS #########################################
@@ -8,18 +8,19 @@ Name: _________YOUR NAME HERE________
 
 1: Briefly explain what a "tag" is. What is the name of the URL pattern that handles requests for the tag page? 
 --------------------------------------------------------------------------------
-
+A tag is a specifier for articles (i.e. editorials, arts, etc.). The name of the URL pattern that handles requests for the tag page is 'tagpage'.
 
 2: What view handles the tag page?
 --------------------------------------------------------------------------------
-
+The (cache_page) tag view handles the tag page.
 
 3: Say I wanted the page for the just the tag “Editorials.” What parameter(s) would be passed from the url to the view, and what would their value(s) be?
 --------------------------------------------------------------------------------
-
+The parameters that would be passed in would be the request (basically url), the tagname (from url), the page (set to 1), sections (set to None), and types (set to None).
 
 4: Now say I wanted only the articles with the tag “Editorials” in the “Opinion” section. What parameter(s) would be passed from url to view now, and what would their value(s) be? 
 --------------------------------------------------------------------------------
+The parameters would be the same except the tagname would be "Editorials."
 
 ################################################################################
 ############################### ARTICLES #######################################
@@ -27,22 +28,23 @@ Name: _________YOUR NAME HERE________
 
 5: What url pattern handles this? What view handles it?
 --------------------------------------------------------------------------------
-
+The 'generic patterns' url pattern handles general articles (specifically the first one which is just settings.CONTENT_URL_RE which is the ctype (content type), year, month, day, and slug. The (cache_page) get_content view handles general articles.
 
 6: What type of object (i.e. what class / model) is the variable “c” in this view? 
 --------------------------------------------------------------------------------
-
+It is a Content object.
 
 7: Which method is ultimately responsible for rendering the article? 
 --------------------------------------------------------------------------------
+The '_render_to_response' function (which returns the return value of the '_render' function formatted as an HTTP request)
 
-
-8: What is its file path? 
+8: What is its file path?
 --------------------------------------------------------------------------------
-
+Its file path is crimsononline/content/templates/models/article/page.html
 
 9: Find the div with the id “article-tags” in the template. Explain what is happening in this div. 
 --------------------------------------------------------------------------------
+This div cycles through all the tags that an article has and creates a linked string of that tag for each tag that is a tag for the article. This is how you can click on tags at the bottom of an article to see more articles with that same tag.
 
 ################################################################################
 ######################## BASE TEMPLATE AND SEARCH ##############################
@@ -50,15 +52,16 @@ Name: _________YOUR NAME HERE________
 
 10: What is the purpose of this particular template? 
 --------------------------------------------------------------------------------
-
+To define a base template with all the sources and generic headers and footers that every page on the Crimson can extend in order to have all pages have the same basic components.
 
 11: What are some parts of the website that are defined in `__base.html`? 
 --------------------------------------------------------------------------------
-
+Footer 'sections' (News, Opinion, Features, etc.), 'more' (About Us, Advertising, etc.), and 'resources' (Privacy Policy, Rights & Permissions, etc.); Header banner, section links (news, opinions, etc.), and search bar; sources and basic JavaScript to run Google services for ads, etc.
 
 12: What is the url pattern that handles search? 
 --------------------------------------------------------------------------------
-
+The url pattern that handles search is '/search/' (a.k.a. wwww.thecrimson.com/search/ followed by the query)
 
 13: Describe at a high level how we might implement our own search functionality, say, that searched specifically just tags by the tag name. 
 --------------------------------------------------------------------------------
+To implement search functionality to find just specific tags by the tag name, you could select all the content objects in the database with a certain tag (i.e. SELECT contentname FROM database WHERE tag = "arts" or something like that?). You would essentially have to search through all the tags for each article in the database to see if there was a tag that matched the tag name you were looking for.
