@@ -16,7 +16,7 @@ The view that handles the tag page is called 'tag'.
 One of the arguments that the tag view takes is 'tagname'. In this case, the tagname parameter would be set to 'Editorials'.
 
 4: Now say I wanted only the articles with the tag “Editorials” in the “Opinion” section. What parameter(s) would be passed from url to view now, and what would their value(s) be? 
-The tagname parameter would again be set to the string 'Editorials', but there would not need to be any extra parameters passed since all Editorials are in the Opinion section.
+The tagname parameter would again be set to the string 'Editorials', and the sections parameter would be set to "Opinion".
 
 ################################################################################
 ############################### ARTICLES #######################################
