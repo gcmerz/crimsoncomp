@@ -1,0 +1,70 @@
+Assignment 5 Questions
+
+Name: _________Evan Arnold________
+
+################################################################################
+################################# TAGS #########################################
+################################################################################
+
+1: Briefly explain what a "tag" is. What is the name of the URL pattern that handles requests for the tag page? 
+--------------------------------------------------------------------------------
+A tag is word that you can use to filter through all of the articles. 
+
+2: What view handles the tag page? The name of the URL pattern is 'tagpage.'
+--------------------------------------------------------------------------------
+The view that handles the tag page is 'tag.'
+
+3: Say I wanted the page for the just the tag “Editorials.” What parameter(s) would be passed from the url to the view, and what would their value(s) be?
+--------------------------------------------------------------------------------
+The only parameter passed to the view would be the 'tagname.' The value of 'tagname' would be a string that is the input tag (aka 'Editorials').
+
+4: Now say I wanted only the articles with the tag “Editorials” in the “Opinion” section. What parameter(s) would be passed from url to view now, and what would their value(s) be? 
+--------------------------------------------------------------------------------
+Two parameters would be passed to the view: tagname, which would again be a string of the input tag (aka 'Editorials', and section which would be 'Opinion.'
+
+################################################################################
+############################### ARTICLES #######################################
+################################################################################
+
+5: What url pattern handles this? What view handles it?
+--------------------------------------------------------------------------------
+The URL is 'r'(?P<ctype>[\w\-]+)/(?P<year>\d{4})/(?P<month>\d{1,2})/' \
+                 '(?P<day>\d{1,2})/(?P<slug>[0-9\w_\-%]+)/$''
+
+The view that handles it is 'get_content.'
+
+6: What type of object (i.e. what class / model) is the variable “c” in this view? 
+--------------------------------------------------------------------------------
+'c' is a 'get_content_object.'
+
+7: Which method is ultimately responsible for rendering the article? 
+--------------------------------------------------------------------------------
+The method responsible is '_render_to_response.'
+
+8: What is its file path? 
+--------------------------------------------------------------------------------
+Its file path is crimsononline/content/models/article/page.html.
+
+9: Find the div with the id “article-tags” in the template. Explain what is happening in this div. 
+--------------------------------------------------------------------------------
+In this div, a for loop displays all of the safe tags and it assigns each a link aswell.
+
+################################################################################
+######################## BASE TEMPLATE AND SEARCH ##############################
+################################################################################
+
+10: What is the purpose of this particular template? 
+--------------------------------------------------------------------------------
+This template provides a foundational template for other pages to build upon and insert data into.
+
+11: What are some parts of the website that are defined in `__base.html`? 
+--------------------------------------------------------------------------------
+The search functionality of the site and the footer of every page (including Sections, More, and Resources) are defined in __base.html. 
+
+12: What is the url pattern that handles search? 
+--------------------------------------------------------------------------------
+The URL patter is 'r'^search/', include('crimsononline.search.urls')'
+
+13: Describe at a high level how we might implement our own search functionality, say, that searched specifically just tags by the tag name. 
+--------------------------------------------------------------------------------
+You would have to loop through all of the objects, identifying each tag. Then, when searching, you would find each object that has that tag assigned to it. Finally, you would display each of the articls in the objects. 
