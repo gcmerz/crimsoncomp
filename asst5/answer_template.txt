@@ -1,0 +1,64 @@
+Assignment 5 Questions
+
+Name: _________YOUR NAME HERE________
+
+################################################################################
+################################# TAGS #########################################
+################################################################################
+
+1: Briefly explain what a "tag" is. What is the name of the URL pattern that handles requests for the tag page? 
+--------------------------------------------------------------------------------
+
+
+2: What view handles the tag page?
+--------------------------------------------------------------------------------
+
+
+3: Say I wanted the page for the just the tag “Editorials.” What parameter(s) would be passed from the url to the view, and what would their value(s) be?
+--------------------------------------------------------------------------------
+
+
+4: Now say I wanted only the articles with the tag “Editorials” in the “Opinion” section. What parameter(s) would be passed from url to view now, and what would their value(s) be? 
+--------------------------------------------------------------------------------
+
+################################################################################
+############################### ARTICLES #######################################
+################################################################################
+
+5: What url pattern handles this? What view handles it?
+--------------------------------------------------------------------------------
+
+
+6: What type of object (i.e. what class / model) is the variable “c” in this view? 
+--------------------------------------------------------------------------------
+
+
+7: Which method is ultimately responsible for rendering the article? 
+--------------------------------------------------------------------------------
+
+
+8: What is its file path? 
+--------------------------------------------------------------------------------
+
+
+9: Find the div with the id “article-tags” in the template. Explain what is happening in this div. 
+--------------------------------------------------------------------------------
+
+################################################################################
+######################## BASE TEMPLATE AND SEARCH ##############################
+################################################################################
+
+10: What is the purpose of this particular template? 
+--------------------------------------------------------------------------------
+
+
+11: What are some parts of the website that are defined in `__base.html`? 
+--------------------------------------------------------------------------------
+
+
+12: What is the url pattern that handles search? 
+--------------------------------------------------------------------------------
+
+
+13: Describe at a high level how we might implement our own search functionality, say, that searched specifically just tags by the tag name. 
+--------------------------------------------------------------------------------
