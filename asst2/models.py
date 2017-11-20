@@ -1,5 +1,5 @@
-
 from datetime import date
+from PIL import Image
 
 
 class Content(object):
@@ -10,9 +10,8 @@ class Content(object):
         # log each piece of content as existing upon creation
         self.existing_content.append(self)
 
-        # TODO: Delete the following line and replace it with a line
-        # that stores the year, month, and day (hint: check out datetime.date)
-        self.creation_date = None
+        # date object for the year-month-day that the content was created
+        self.creation_date = date(year, month, day)
 
         # list of contirbutors
         self.contributors = contributors
@@ -22,7 +21,38 @@ class Content(object):
         raise NotImplementedError
 
 
-# TODO: Define an Article class that extends the Content class
+class Article(Content):
+
+    def __init__(self, year, month, day, contributors, headline, content):
+        # give the article object all the attributes of generic content objects
+        super(Article, self).__init__(year, month, day, contributors)
+
+        # string for the headline of the article
+        self.headline = headline
+
+        # string holding the text of the content
+        self.content = content
+
+    # override the Content class's show() method to display the article
+    def show(self):
+        print self.headline + "\n\n" + self.content
 
 
-# TODO: Define a Picture class that extends the Content class
+class Picture(Content):
+
+    def __init__(self, year, month, day, contributors, title, caption, path):
+        # give the picture object the Content class's attributes
+        super(Picture, self).__init__(year, month, day, contributors)
+
+        # the title of the image
+        self.title = title
+
+        # the caption for the image
+        self.caption = caption
+
+        # file path to where the image is locally stored
+        self.path = path
+
+    # override the Content class's show() method to display the image
+    def show(self):
+        Image.open(self.path).show()

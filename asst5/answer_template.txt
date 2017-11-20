@@ -1,6 +1,6 @@
 Assignment 5 Questions
 
-Name: _________YOUR NAME HERE________
+Name: Ricky Williams
 
 ################################################################################
 ################################# TAGS #########################################
@@ -9,17 +9,34 @@ Name: _________YOUR NAME HERE________
 1: Briefly explain what a "tag" is. What is the name of the URL pattern that handles requests for the tag page? 
 --------------------------------------------------------------------------------
 
+A tag is a word or phrase used to group articles based on the kinds of the topics that they cover (like Drew Faust) or their general format (liked editorials).
+Tags span across sections and other divisions between articles.
+
+In urls.py the pattern is called "tagpage."
 
 2: What view handles the tag page?
 --------------------------------------------------------------------------------
+
+tag(request, tagname, page=1, sections=None, types=None) on line 150 in crimson/content/views.py
 
 
 3: Say I wanted the page for the just the tag “Editorials.” What parameter(s) would be passed from the url to the view, and what would their value(s) be?
 --------------------------------------------------------------------------------
 
+'request' = HttpRequest object
+'tagname' = "editorials"
+'page' = 1
+'sections' = None
+'types' = None
 
 4: Now say I wanted only the articles with the tag “Editorials” in the “Opinion” section. What parameter(s) would be passed from url to view now, and what would their value(s) be? 
 --------------------------------------------------------------------------------
+
+'request' = HttpRequest object
+'tagname' = "editorials"
+'page' = 1
+'sections' = "Opinion"
+'types' = None
 
 ################################################################################
 ############################### ARTICLES #######################################
@@ -28,21 +45,37 @@ Name: _________YOUR NAME HERE________
 5: What url pattern handles this? What view handles it?
 --------------------------------------------------------------------------------
 
+The pattern is handled by the function call
+
+url('^' + settings.CONTENT_URL_RE, 'get_content', name='content_content')
+
+where CONTENT_URL_RE = r'(?P<ctype>[\w\-]+)/(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<day>\d{1,2})/(?P<slug>[0-9\w_\-%]+)/$'
+
+View function get_content(request,ctype, year, month, day, slug, content_group=None) handles the request
+
 
 6: What type of object (i.e. what class / model) is the variable “c” in this view? 
 --------------------------------------------------------------------------------
 
+Content
 
 7: Which method is ultimately responsible for rendering the article? 
 --------------------------------------------------------------------------------
 
+_render()
 
 8: What is its file path? 
 --------------------------------------------------------------------------------
 
+crimsononline/content/models/article/page.html
+
 
 9: Find the div with the id “article-tags” in the template. Explain what is happening in this div. 
 --------------------------------------------------------------------------------
+
+The div displays all the tags associated with the viewed article. It first checks if the article
+has tags, and then displays each one using a directive in a for loop.
+
 
 ################################################################################
 ######################## BASE TEMPLATE AND SEARCH ##############################
@@ -51,14 +84,31 @@ Name: _________YOUR NAME HERE________
 10: What is the purpose of this particular template? 
 --------------------------------------------------------------------------------
 
+This template is the HTML backbone of the Crimson website, and is found on every
+webpage. The template displays the masthead, sets up where all of each page's content
+should be, and so on. Every other template simply adds on divs and other markers on top 
+of the base template's. 
+
 
 11: What are some parts of the website that are defined in `__base.html`? 
 --------------------------------------------------------------------------------
+
+- the masthead (shows the Crimson logo, each section link, etc.)
+- sidebars/footer placement on each page
+- the main div used to hold all variable content on a page
+- how much the website is zoomed in
 
 
 12: What is the url pattern that handles search? 
 --------------------------------------------------------------------------------
 
+The pattern is handled by the function call url(r'^$', SearchView.as_view()), which
+basically relies on Google's own search patterns that are not implemented in the Crimson
+code 
+
 
 13: Describe at a high level how we might implement our own search functionality, say, that searched specifically just tags by the tag name. 
 --------------------------------------------------------------------------------
+
+Given a tag name, we could perform a SQL query for the database representing Content that would find all content with the tag name as one of
+its tags. We could then take these Content objects and show them to the user.
