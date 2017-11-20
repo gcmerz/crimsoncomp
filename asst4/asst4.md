@@ -58,8 +58,8 @@ This part is tricky because it involves reading documentation (gasp!). The idea 
 Resources:
 
 - A helpful page on how to change the elements on the admin interface is located [here](https://docs.djangoproject.com/en/1.8/intro/tutorial02/#customize-the-admin-form).
-- TinyMCE installation instructions [here](http://django-tinymce.readthedocs.io/en/latest/installation.html) (be sure to `workon` your virtual environment!).
-- ... and documentation on how to use it is [here](http://django-tinymce.readthedocs.io/en/latest/usage.html). Go nuts!
+- TinyMCE installation instructions here (be sure to `workon` your virtual environment!).
+- ... and documentation on how to use it is [here](http://django-tinymce.readthedocs.org/en/latest/usage.html). Go nuts!
 
 Don't worry if it seems nebulous - it may be helpful to work with another tech comper on this, so refer to the facecard wall, or ask us if you hit a wall.
 

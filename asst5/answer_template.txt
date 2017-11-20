@@ -1,24 +1,31 @@
-Assignment 5 Questions
+﻿Assignment 5 Questions
 
-Name: _________YOUR NAME HERE________
+Name: ________Will Yao________
 
 ################################################################################
 ################################# TAGS #########################################
 ################################################################################
 
 1: Briefly explain what a "tag" is. What is the name of the URL pattern that handles requests for the tag page? 
+A tag is a keyword (a piece of metadata) that references a specific piece of information.
+tagpage is the name of URL pattern
 --------------------------------------------------------------------------------
 
 
 2: What view handles the tag page?
+tag?
+
 --------------------------------------------------------------------------------
 
 
 3: Say I wanted the page for the just the tag “Editorials.” What parameter(s) would be passed from the url to the view, and what would their value(s) be?
+tagname would be passed from url to the view and the value would be 'Editorials'
 --------------------------------------------------------------------------------
 
 
 4: Now say I wanted only the articles with the tag “Editorials” in the “Opinion” section. What parameter(s) would be passed from url to view now, and what would their value(s) be? 
+section name and tag name would be passed from url to views. The value of section name would be opinion and the value of 
+tag name would be Editorials
 --------------------------------------------------------------------------------
 
 ################################################################################
@@ -26,22 +33,32 @@ Name: _________YOUR NAME HERE________
 ################################################################################
 
 5: What url pattern handles this? What view handles it?
+
+url('^' + settings.CONTENT_URL_RE, 'get_content', name='content_content')
+get_content handles this page
+
 --------------------------------------------------------------------------------
 
 
 6: What type of object (i.e. what class / model) is the variable “c” in this view? 
+c is a content object
 --------------------------------------------------------------------------------
 
 
-7: Which method is ultimately responsible for rendering the article? 
+7: Which method is ultimately responsible for rendering the article?
+ HttpResponse(self._render(method, context, request))
+
 --------------------------------------------------------------------------------
 
 
 8: What is its file path? 
+crimsononline/crimsononline/content/templates/models/article/page.html
 --------------------------------------------------------------------------------
 
 
 9: Find the div with the id “article-tags” in the template. Explain what is happening in this div. 
+The tags associated with the aricle are renedered on the page beneath the text of the
+article
 --------------------------------------------------------------------------------
 
 ################################################################################
@@ -49,16 +66,23 @@ Name: _________YOUR NAME HERE________
 ################################################################################
 
 10: What is the purpose of this particular template? 
+Serves as a 'base' html template that most other html templates extend. Establishes parts
+of the website that stay consistent regardless of what page/content is loaded. i.e masthead
+and search bar
 --------------------------------------------------------------------------------
 
 
 11: What are some parts of the website that are defined in `__base.html`? 
+masthead, header, footer, categories, search bar
+
 --------------------------------------------------------------------------------
 
 
 12: What is the url pattern that handles search? 
+url(r'^search/', include('crimsononline.search.urls'))
 --------------------------------------------------------------------------------
 
 
 13: Describe at a high level how we might implement our own search functionality, say, that searched specifically just tags by the tag name. 
+Query thru Content models searching for tag names and returning json of resulting articles
 --------------------------------------------------------------------------------
